@@ -5,63 +5,39 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: antiquewhite;
     display: grid;
     place-items: center;
     font-size: 20px;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
+    transition: transform .35s steps(1, end);
 }
 
-.screen--top {
-    animation-name: top;
-}
-
-.screen--right {
-    animation-name: right;
+.screen.screen--active {
+    z-index: 1;
+    transition: transform .35s ease;
 }
 
 .screen--left {
-    animation-name: left;
+    transform: translateX(-100%);
+}
+
+.screen--right {
+    transform: translateX(100%);
+}
+
+.screen--top {
+    transform: translateY(-100%);
 }
 
 .screen--bottom {
-    animation-name: bottom;
+    transform: translateY(100%);
 }
 
-
-@keyframes bottom {
-    0% { 
-        transform: translateY(100%);
-    }
-    100% { 
-        transform: translateY(0);
-    }
+.screen--left.screen--active,
+.screen--right.screen--active {
+    transform: translateX(0%);
 }
 
-@keyframes top {
-    0% { 
-        transform: translateY(-100%);
-    }
-    100% { 
-        transform: translateY(0);
-    }
-}
-
-@keyframes left {
-    0% { 
-        transform: translateX(-100%);
-    }
-    100% { 
-        transform: translateX(0);
-    }
-}
-@keyframes right {
-    0% { 
-        transform: translateX(100%);
-    }
-    100% { 
-        transform: translateX(0);
-    }
+.screen--bottom.screen--active,
+.screen--top.screen--active {
+    transform: translateY(0%);
 }
