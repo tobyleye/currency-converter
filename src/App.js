@@ -4,7 +4,6 @@ import { ScreenManager, useScreenManager } from "./screen/screenmanager";
 
 function Controls() {
   const { navigate, activeScreen } = useScreenManager();
-  console.log({ navigate, activeScreen });
   return (
     <div className="controls">
       {Array(4)
@@ -25,7 +24,6 @@ function Controls() {
 function App() {
   return (
     <div className="App">
-      <Controls />
       <ScreenManager>
         <Screen position="right">
           <p>Right screen</p>
