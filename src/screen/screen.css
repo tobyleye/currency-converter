@@ -1,0 +1,67 @@
+.screen {
+    border: 4px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+.screen--top {
+    animation-name: top;
+}
+
+.screen--right {
+    animation-name: right;
+}
+
+.screen--left {
+    animation-name: left;
+}
+
+.screen--bottom {
+    animation-name: bottom;
+}
+
+
+@keyframes bottom {
+    0% { 
+        transform: translateY(100%);
+    }
+    100% { 
+        transform: translateY(0);
+    }
+}
+
+@keyframes top {
+    0% { 
+        transform: translateY(-100%);
+    }
+    100% { 
+        transform: translateY(0);
+    }
+}
+
+@keyframes left {
+    0% { 
+        transform: translateX(-100%);
+    }
+    100% { 
+        transform: translateX(0);
+    }
+}
+@keyframes right {
+    0% { 
+        transform: translateX(100%);
+    }
+    100% { 
+        transform: translateX(0);
+    }
+}
