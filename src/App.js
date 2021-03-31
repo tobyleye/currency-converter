@@ -1,30 +1,15 @@
+import * as React from "react";
 import "./App.css";
-import { Screen } from "./screen/screen";
-import { ScreenManager, useScreenManager } from "./screen/screenmanager";
-
-function Controls() {
-  const { navigate, activeScreen } = useScreenManager();
-  return (
-    <div className="controls">
-      {Array(4)
-        .fill(null)
-        .map((i, index) => (
-          <button
-            key={index}
-            disabled={activeScreen === index}
-            onClick={() => navigate(index)}
-          >
-            screen #{index + 1}
-          </button>
-        ))}
-    </div>
-  );
-}
+import NumberPad from "./number-pad";
+// import { Screen } from "./screen/screen";
+// import { ScreenManager, useScreenManager } from "./screen/screenmanager";
 
 function App() {
+  const [amount, setAmount] = React.useState("");
+
   return (
     <div className="App">
-      <ScreenManager>
+      {/* <ScreenManager>
         <Screen position="right">
           <p>Right screen</p>
         </Screen>
@@ -38,7 +23,8 @@ function App() {
           <p>Bottom screen</p>
         </Screen>
         <Controls />
-      </ScreenManager>
+      </ScreenManager> */}
+      <NumberPad onChange={setAmount} value={amount} />
     </div>
   );
 }

@@ -1,0 +1,55 @@
+.number-pad {
+    max-width: 32rem;
+    margin: auto;
+}
+
+.number-pad__screen {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+
+.number-pad__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin: auto;
+    padding: 1rem;
+}
+
+.number-pad__buttons button {
+    border: none;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 100%;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.number-pad__buttons button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+  
+.number-pad__cursor {
+    display: inline-block;
+    border-right: 1px solid black;
+    margin: 0 4px;
+    height: 2rem;;
+    animation: blink .8s steps(1, end) infinite;
+    
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+

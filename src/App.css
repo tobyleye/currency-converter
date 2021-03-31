@@ -4,11 +4,10 @@
   box-sizing: border-box;
 }
 
-.controls {
-  position: fixed;
-  z-index: 1000;
-  top: 2rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
+html {
+  font-size: 62.5%;
+}
+
+body {
+font-size: 1.6rem;
 }
